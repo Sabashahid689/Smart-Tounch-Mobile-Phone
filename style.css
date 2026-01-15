@@ -1,0 +1,47 @@
+body { background:#111; display:flex; justify-content:center; height:100vh; }
+.phone { width:320px;height:650px;background:#000;color:#fff;border-radius:30px;padding:10px; }
+.status { display:flex;justify-content:space-between; }
+.screen { display:none;text-align:center; }
+.screen.active { display:block; }
+.apps { display:grid;grid-template-columns:repeat(3,1fr);gap:10px; }
+.app { background:#222;padding:10px;border-radius:15px;cursor:pointer; }
+.keypad { display:grid;grid-template-columns:repeat(3,1fr);gap:5px; }
+.dark { background:#000 !important; }
+
+
+/* Touch Friendly Buttons */
+button, .app {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  transition: transform 0.08s ease, background 0.08s ease;
+}
+
+/* Button Press Effect */
+button:active, .app:active {
+  transform: scale(0.92);
+  background: #444;
+}
+
+/* App Icon Style */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  font-size: 22px;
+}
+
+/* Dial buttons */
+.keypad button {
+  font-size: 20px;
+  height: 50px;
+  border-radius: 12px;
+}
+
+/* Better scrolling on mobile */
+.screen {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}

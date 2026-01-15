@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mobile OS Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone">
+
+<div class="status">
+  <span id="time"></span>
+  <span>📶 🔋</span>
+</div>
+
+<!-- HOME -->
+<div id="home" class="screen active">
+  <div class="apps">
+    <div class="app" onclick="openApp('phone')">📞<span>Phone</span></div>
+    <div class="app" onclick="openApp('contacts')">👤<span>Contacts</span></div>
+    <div class="app" onclick="openApp('messages')">💬<span>Messages</span></div>
+    <div class="app" onclick="openApp('whatsapp')">🟢<span>WhatsApp</span></div>
+    <div class="app" onclick="openApp('camera')">📷<span>Camera</span></div>
+    <div class="app" onclick="openApp('gallery')">🖼️<span>Gallery</span></div>
+    <div class="app" onclick="openApp('calculator')">🧮<span>Calc</span></div>
+    <div class="app" onclick="openApp('notes')">📝<span>Notes</span></div>
+    <div class="app" onclick="openApp('settings')">⚙️<span>Settings</span></div>
+  </div>
+</div>
+
+<!-- PHONE -->
+<div id="phone" class="screen">
+  <h2>Dial Pad</h2>
+  <input id="dial" readonly>
+  <div class="keypad">
+    <button onclick="dialNum('1')">1</button>
+    <button onclick="dialNum('2')">2</button>
+    <button onclick="dialNum('3')">3</button>
+    <button onclick="dialNum('4')">4</button>
+    <button onclick="dialNum('5')">5</button>
+    <button onclick="dialNum('6')">6</button>
+    <button onclick="dialNum('7')">7</button>
+    <button onclick="dialNum('8')">8</button>
+    <button onclick="dialNum('9')">9</button>
+    <button onclick="dialNum('0')">0</button>
+    <button onclick="call()">📞 Call</button>
+    <button onclick="clearDial()">C</button>
+  </div>
+  <button onclick="goHome()">Home</button>
+</div>
+
+<!-- CONTACTS -->
+<div id="contacts" class="screen">
+  <h2>Contacts</h2>
+  <input id="cname" placeholder="Name">
+  <input id="cnum" placeholder="Number">
+  <button onclick="addContact()">Add</button>
+  <ul id="contactList"></ul>
+  <button onclick="goHome()">Home</button>
+</div>
+
+<!-- MESSAGES -->
+<div id="messages" class="screen">
+  <h2>Messages</h2>
+  <textarea id="sms"></textarea>
+  <button onclick="sendSMS()">Send</button>
+  <div id="smsBox"></div>
+  <button onclick="goHome()">Home</button>
+</div>
+
+<!-- WHATSAPP -->
+<div id="whatsapp" class="screen">
+  <h2>WhatsApp</h2>
+  <div id="chat"></div>
+  <input id="wa" placeholder="Type message">
+  <button onclick="sendWA()">Send</button>
+  <button onclick="goHome()">Home</button>
+</div>
+
+<!-- CAMERA -->
+<div id="camera" class="screen">
+  <video id="video" autoplay></video>
+  <button onclick="startCamera()">Open Camera</button>
+  <button onclick="goHome()">Home</button>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery" class="screen">
+  <h2>Gallery</h2>
+  <img src="https://picsum.photos/200">
+  <img src="https://picsum.photos/201">
+  <button onclick="goHome()">Home</button>
+</div>
+
+<!-- NOTES -->
+<div id="notes" class="screen">
+  <textarea placeholder="Write notes..."></textarea>
+  <button onclick="goHome()">Home</button>
+</div>
+
+<!-- CALCULATOR -->
+<div id="calculator" class="screen">
+  <input id="calc" readonly>
+  <div class="keypad">
+    <button onclick="calcBtn('1')">1</button>
+    <button onclick="calcBtn('2')">2</button>
+    <button onclick="calcBtn('+')">+</button>
+    <button onclick="calcBtn('=')">=</button>
+  </div>
+  <button onclick="goHome()">Home</button>
+</div>
+
+<!-- SETTINGS -->
+<div id="settings" class="screen">
+  <label>
+    Dark Mode
+    <input type="checkbox" onchange="toggleDark()">
+  </label>
+  <button onclick="goHome()">Home</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
